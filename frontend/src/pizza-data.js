@@ -9,7 +9,7 @@ const pizzas = [
         large: 399,
       },
     ],
-    category: "veg",
+    category: "Veg Pizza",
     image: "/images/margherita.jpg",
     description: "Classic delight with 100% real mozzarella cheese",
   },
@@ -23,7 +23,7 @@ const pizzas = [
         large: 599,
       },
     ],
-    category: "veg",
+    category: "Veg Pizza",
     image: "/images/farmhouse.jpg",
     description:
       "Delightful combination of onion, capsicum, tomato & grilled mushroom",
@@ -38,7 +38,7 @@ const pizzas = [
         large: 460,
       },
     ],
-    category: "veg",
+    category: "Veg Pizza",
     description:
       "The awesome foursome! Golden corn, black olives, capsicum, red paprika",
     image: "/images/veggie_paradise.jpg",
@@ -53,7 +53,7 @@ const pizzas = [
         large: 599,
       },
     ],
-    category: "nonveg",
+    category: "Nonveg Pizza",
     image: "/images/chicken_golden_delight.jpg",
     description:
       "Double pepper barbecue chicken, golden corn and extra cheese, true delight",
@@ -68,7 +68,7 @@ const pizzas = [
         large: 800,
       },
     ],
-    category: "nonveg",
+    category: "Nonveg Pizza",
     image: "/images/cheesepepperoni.jpg",
     description:
       "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese",
@@ -83,7 +83,7 @@ const pizzas = [
         large: 500,
       },
     ],
-    category: "nonveg",
+    category: "Nonveg Pizza",
     image: "/images/IndianTandooriChickenTikka.jpg",
     description:
       "The wholesome flavour of tandoori masala with Chicken tikka, onion, red paprika & mint mayo",
