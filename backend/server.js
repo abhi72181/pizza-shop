@@ -12,6 +12,10 @@ app.use(morgan('dev'))
 const connect=require("./configs/db")
 const { connection } = require("mongoose")
 // #routes
+
+
+
+app.use("/api/pizzas", require("./controllers/PizzaController"))
 app.get("/",(req,res)=>{
     return res.send('<h1>welcome to backend  </h1>')
 })
