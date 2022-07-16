@@ -12,3 +12,4 @@ export const getAllPizzas=()=> async (dispatch)=>{
         dispatch({type:GET_ALL_PIZZA_ERROR,payload:error})
     }
 }
+

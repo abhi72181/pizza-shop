@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
      </Routes>
-
+     <br /><br />
+     <Footer />
+     <br /><br />
     </>
   );
 }

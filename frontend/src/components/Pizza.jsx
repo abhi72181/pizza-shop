@@ -18,10 +18,16 @@ import {
   TagRightIcon,
   TagCloseButton,
 } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { addPizzasToCart } from "../store/addData/AddToCartAction";
 const Pizza = ({ e }) => {
   const [varient, setVarient] = useState("small");
   const [quantity, setQuantity] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch=useDispatch()
+  const handleAddCart=(e)=>{
+    dispatch(addPizzasToCart(e,varient,quantity))
+  }
   return (
     <div className="pizzaCard">
       <img
@@ -73,7 +79,7 @@ const Pizza = ({ e }) => {
 
       <div className="SelectDiv">
         <h3>Price: ₹{e.prices[0][varient] * quantity}</h3>
-        <Button colorScheme="orange">Add to cart</Button>
+        <Button colorScheme="orange" onClick={()=>handleAddCart(e)}>Add to cart</Button>
       </div>
 
       <Modal isOpen={isOpen} onClose={onClose}>

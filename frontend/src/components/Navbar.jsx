@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
 // import { useDispatch, useSelector } from "react-redux";
 // import { logout } from "../store/auth/auth.action";
 // import { useEffect } from "react";
@@ -26,6 +27,11 @@ const Navbar = () => {
   // const {isAuth}=useSelector((state)=>state.auth.authenticate)
   // const dispatch=useDispatch()
   const navigate=useNavigate()
+  // const dispatch=useDispatch()
+
+  const cartData=useSelector((state=> state.addToCart))
+  console.log(cartData,"cartData")
+  
   const data = [
     {
       name: "Flash Sale",
@@ -122,7 +128,14 @@ const Navbar = () => {
           </div>
 
           <div className="carticon">
-           <Link to="/cart"> <MdShoppingCart size={40} /></Link>
+           <Link to="/cart"> 
+           <div style={{display:"flex",fontSize:"20px",fontWeight:"500"}}>
+           <MdShoppingCart size={40} />
+           <div style={{color:"red"}}>
+           {cartData.cartItems.length}
+            </div> 
+           </div>
+           </Link>
           </div>
         </div>
       </div>
