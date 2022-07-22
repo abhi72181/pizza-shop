@@ -7,6 +7,16 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { MdShoppingCart } from "react-icons/md";
 import { GoTriangleDown } from "react-icons/go";
 import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react'
+import {
   Modal,
   ModalOverlay,
   ModalContent,
@@ -19,15 +29,16 @@ import {
 } from "@chakra-ui/react";
 
 import "./Navbar.css";
-import { useDispatch, useSelector } from "react-redux";
 // import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../store/userRegister/registerAction";
 // import { logout } from "../store/auth/auth.action";
 // import { useEffect } from "react";
 const Navbar = () => {
   // const {isAuth}=useSelector((state)=>state.auth.authenticate)
   // const dispatch=useDispatch()
   const navigate=useNavigate()
-  // const dispatch=useDispatch()
+  const dispatch=useDispatch()
 
   const cartData=useSelector((state=> state.addToCart))
   console.log(cartData,"cartData")
@@ -95,6 +106,8 @@ const Navbar = () => {
 //   navigate("/login")
 // }
 // },[isAuth])
+const userState=useSelector((state)=>state.userLoginReducer)
+console.log(userState,"userState")
   return (
     <div className="mainNav">
       <div className="topNav">
@@ -118,14 +131,29 @@ const Navbar = () => {
           </div> */}
         </div>
         <div className="rightTopNav">
-         <div className="belowrightTopNav"><Button colorScheme="orange" >Logout</Button></div>
-         <div className="belowrightTopNav">
-            <div>
-              <Link to="/login">LOGIN</Link> / <Link to="/signup">SIGNUP</Link>
-            </div>
+        
+         {userState.currentuser.name ? <div className="belowrightTopNav"><Menu >
+  {({ isOpen }) => (
+    <>
+      <MenuButton colorScheme="orange" isActive={isOpen} as={Button} >
+        {userState.currentuser.name}
+      </MenuButton>
+      <MenuList>
+        <MenuItem>order</MenuItem>
+        <MenuItem onClick={()=>dispatch(logoutUser())} >Logout</MenuItem>
+      </MenuList>
+    </>
+  )}
+</Menu></div>: <div className="belowrightTopNav">
+         
+         <div >
+           <Link to="/login">LOGIN</Link> / <Link to="/signup">SIGNUP</Link>
+         </div>
 
-            <div className="welcome">WELCOME GUEST</div>
-          </div>
+         <div className="welcome">WELCOME GUEST</div>
+         </div>
+       }
+        
 
           <div className="carticon">
            <Link to="/cart"> 

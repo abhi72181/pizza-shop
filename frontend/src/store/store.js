@@ -4,15 +4,24 @@ import thunk from "redux-thunk"
 import {composeWithDevTools} from "redux-devtools-extension"
 import { getAllPizzasReducer } from "./getData/pizzaReducer"
 import { addCartReducer } from "./addData/AddCartReducer"
+import { userRegisterReducer } from "./userRegister/registerReducer"
+import { userLoginReducer } from "./userRegister/registerReducer"
 
 const rootReducer=combineReducers({
     getAllPizzas:getAllPizzasReducer,
-    addToCart:addCartReducer
+    addToCart:addCartReducer,
+    userRegisterReducer:userRegisterReducer,
+    userLoginReducer:userLoginReducer
+  
 })
 const cartItems=JSON.parse(localStorage.getItem("cartData")) || []
+const currentuser=JSON.parse(localStorage.getItem("currentUser")) || []
 const initialState={
 addToCart:{
-    cartItems:cartItems
+    cartItems:cartItems  
+},
+userLoginReducer:{
+    currentuser:currentuser
 }
 }
 export const store=legacy_createStore(rootReducer,initialState,composeWithDevTools(applyMiddleware(thunk)))
