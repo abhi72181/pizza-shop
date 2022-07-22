@@ -16,6 +16,7 @@ const { connection } = require("mongoose")
 
 
 app.use("/api/pizzas", require("./controllers/PizzaController"))
+app.use("/api/users",require("./controllers/registerController"))
 app.get("/",(req,res)=>{
     return res.send('<h1>welcome to backend  </h1>')
 })
