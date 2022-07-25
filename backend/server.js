@@ -9,6 +9,7 @@ dotenv.config()
 app.use(express.json())
 app.use(morgan('dev'))
 
+
 const connect=require("./configs/db")
 const { connection } = require("mongoose")
 // #routes
@@ -17,6 +18,7 @@ const { connection } = require("mongoose")
 
 app.use("/api/pizzas", require("./controllers/PizzaController"))
 app.use("/api/users",require("./controllers/registerController"))
+app.use("/api/orders",require("./controllers/orderController"))
 app.get("/",(req,res)=>{
     return res.send('<h1>welcome to backend  </h1>')
 })
