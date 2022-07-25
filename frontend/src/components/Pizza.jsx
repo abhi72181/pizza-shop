@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./Pizza.css";
-import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
+import { Button,  useDisclosure } from "@chakra-ui/react";
 import {
   Modal,
   ModalOverlay,
@@ -13,10 +13,7 @@ import {
 } from "@chakra-ui/react";
 import {
   Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
+ 
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addPizzasToCart } from "../store/addData/AddToCartAction";

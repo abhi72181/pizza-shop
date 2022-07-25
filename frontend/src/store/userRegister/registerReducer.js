@@ -4,6 +4,13 @@ const initialState={
     loading:false,
     error:false,
     success:false
+
+}
+const initialStatelogin={
+    loading:false,
+    error:false,
+    success:false,
+   
 }
 export const userRegisterReducer=(state=initialState,{type,payload})=>{
 switch(type){
@@ -35,7 +42,7 @@ switch(type){
 }
 }
 
-export const userLoginReducer=(state=initialState,{type,payload})=>{
+export const userLoginReducer=(state=initialStatelogin,{type,payload})=>{
     switch(type){
         case USER_LOGIN_LOADING:{
             return{
@@ -52,6 +59,7 @@ export const userLoginReducer=(state=initialState,{type,payload})=>{
                 loading:false,
                 error:false,
                 success:true,
+             
                 currentuser:payload
             }
         }

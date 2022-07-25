@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import "./Signup.css";
 import { Input, Stack } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
-import axios from "axios";
-import { useEffect } from "react";
+// import axios from "axios";
+
+// import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userRegisterAction } from "../store/userRegister/registerAction";
+import Loader from "./Loader";
+import Failure from "./Failure";
+import Success from "./Success";
 // import { FaCashRegister } from "react-icons/fa";
 
 const Signup = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
  const dispatch=useDispatch()
+ const registerState=useSelector((state)=>state.userRegisterReducer)
+ const {loading,error,success}=registerState
   const [register, setRegister] = useState({
     name:"",
     email: "",
@@ -35,8 +41,12 @@ const Signup = () => {
   }
   return (
     <div className="mainSignup">
-      
+     
       <div className="containerSignup">
+      {loading && <Loader />}
+      {error && <Failure error={error.message} />}
+      {success && <Success success="User Successfully Registered" />}
+      <br />
       <h1 style={{fontSize:"30px",fontWeight:"500"}}>Registration:-</h1>
       <br />
       <label>Name:</label>

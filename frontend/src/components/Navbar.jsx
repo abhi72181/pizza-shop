@@ -1,31 +1,22 @@
 import React from "react";
-import { Input, useDisclosure } from "@chakra-ui/react";
-import { InputGroup } from "@chakra-ui/react";
+// import { Input, useDisclosure } from "@chakra-ui/react";
+// import { InputGroup } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { InputRightElement } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
+// import { InputRightElement } from "@chakra-ui/react";
+// import { SearchIcon } from "@chakra-ui/icons";
 import { MdShoppingCart } from "react-icons/md";
-import { GoTriangleDown } from "react-icons/go";
+// import { GoTriangleDown } from "react-icons/go";
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
+  
 } from '@chakra-ui/react'
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button,
-  Text,
+
+  Button
+  
 } from "@chakra-ui/react";
 
 import "./Navbar.css";
@@ -37,77 +28,17 @@ import { logoutUser } from "../store/userRegister/registerAction";
 const Navbar = () => {
   // const {isAuth}=useSelector((state)=>state.auth.authenticate)
   // const dispatch=useDispatch()
-  const navigate=useNavigate()
+  // const navigate=useNavigate()
   const dispatch=useDispatch()
 
   const cartData=useSelector((state=> state.addToCart))
-  console.log(cartData,"cartData")
+  // console.log(cartData,"cartData")
   
-  const data = [
-    {
-      name: "Flash Sale",
-      path: "/watches",
-    },
-    {
-      name: "Best Deals",
-      path: "/watches",
-    },
-    {
-      name: "Trending",
-      path: "/watches",
-    },
-    {
-      name: "New Arrivals",
-      path: "/watches",
-    },
-  ];
+  
 
-  // const CategoriesData = [
-  //   {
-  //     heading: "Men",
-  //     list: [
-  //       { name: "Watches", path: "/watches" },
-  //       { name: "New Arrivals", path: "/watches" },
-  //     ],
-  //   },
-  //   {
-  //     heading: "Women",
-  //     list: [
-       
-  //       { name: "New Arrivals", path: "/watches" },
-  //       { name: "Watches", path: "/watches" },
-  //     ],
-  //   },
-  //   {
-  //     heading: "Electronics",
-  //     list: [
-  //       { name: "Mobile", path: "/watches" },
-  //       { name: "Electronics", path: "/watches" },
-  //       { name: "Wireless Chargers", path: "/watches" },
-  //       { name: "Wireless Speakers", path: "/watches" },
-  //     ],
-  //   },
-  //   {
-  //     heading: "KIDS & MOM",
-  //     list: [
-        
-  //       { name: "Water Bottles", path: "/watches" },
-  //       { name: "Toys", path: "/watches" },
-  //     ],
-  //   },
-  // ];
-  // const { isOpen, onOpen, onClose } = useDisclosure();
-  // const handleLogout=()=>{
-  //  dispatch(logout())
-  //  navigate("/login")
-  // }
-// useEffect(()=>{
-// if(!isAuth){
-//   navigate("/login")
-// }
-// },[isAuth])
+  
 const userState=useSelector((state)=>state.userLoginReducer)
-console.log(userState,"userState")
+// console.log(userState,"userState")
   return (
     <div className="mainNav">
       <div className="topNav">
@@ -139,7 +70,7 @@ console.log(userState,"userState")
         {userState.currentuser.name}
       </MenuButton>
       <MenuList>
-        <MenuItem>order</MenuItem>
+        
         <MenuItem onClick={()=>dispatch(logoutUser())} >Logout</MenuItem>
       </MenuList>
     </>

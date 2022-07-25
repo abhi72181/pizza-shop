@@ -6,6 +6,7 @@ export const userRegisterAction=(user)=>async(dispatch)=>{
   try {
     const res=await axios.post("/api/users/register",user)
     dispatch({type:USER_REGISTER_SUCCESS})
+    window.location.href="/login"
   } catch (error) {
     dispatch({type:USER_REGISTER_ERROR,payload:error})
   }
@@ -25,5 +26,6 @@ export const userLoginAction=(user)=>async(dispatch)=>{
 
   export const logoutUser=()=>(dispatch)=>{
     localStorage.removeItem("currentUser")
+    localStorage.removeItem("cartData")
     window.location.href="/login"
   }

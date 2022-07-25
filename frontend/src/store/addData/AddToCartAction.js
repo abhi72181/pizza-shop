@@ -1,7 +1,7 @@
 import { store } from "../store"
 import { ADD_TO_CART_LOADING, ADD_TO_CART_SUCCESS, DELETE_PIZZA_SUCCESS } from "./AddCartType"
 const cartLength=store.getState().addToCart.cartItems.length
-console.log(cartLength,"cartlength")
+// console.log(cartLength,"cartlength")
 export const addPizzasToCart=(pizza,varient,quantity)=> (dispatch)=>{
     var cartItem={
         name:pizza.name,

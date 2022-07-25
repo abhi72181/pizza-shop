@@ -1,4 +1,4 @@
-import { ADD_TO_CART_ERROR, ADD_TO_CART_LOADING, ADD_TO_CART_SUCCESS, DELETE_PIZZA_SUCCESS } from "./AddCartType"
+import {  ADD_TO_CART_SUCCESS, DELETE_PIZZA_SUCCESS } from "./AddCartType"
 
 const initialState={
   

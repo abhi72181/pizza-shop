@@ -1,7 +1,7 @@
-import { list } from '@chakra-ui/react'
+// import { list } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import "./Footer.css"
 import { Input } from '@chakra-ui/react'
 const Footer = () => {

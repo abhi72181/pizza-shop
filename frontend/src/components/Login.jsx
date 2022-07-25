@@ -7,14 +7,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { userLoginAction } from "../store/userRegister/registerAction";
+import Loader from "./Loader";
+import Failure from "./Failure";
+import Success from "./Success";
 
 
 const Login = () => {
  const location=useLocation()
   const dispatch=useDispatch()
  const navigate=useNavigate()
-  
-
+  const loginState=useSelector((state)=>state.userLoginReducer)
+ const {loading,error,success}=loginState
  
   const [log, setLog] = useState({
     email: "",
@@ -22,7 +25,7 @@ const Login = () => {
   });
 
   const handleChangeLogin = (e) => {
-    console.log(e.target.name, e.target.value);
+    // console.log(e.target.name, e.target.value);
     setLog({ ...log, [e.target.name]: e.target.value });
   };
 
@@ -42,7 +45,12 @@ const Login = () => {
   },[])
   return (
     <div className="mainSignup">
+     
       <div className="containerSignup">
+      {loading && <Loader />}
+      {error && <Failure error={error.message} />}
+      {success && <Success success="User Login Success" />}
+      <br /><br />
         <label>Email Address:</label>
         <Stack spacing={3}>
           <Input

@@ -6,12 +6,14 @@ import { getAllPizzasReducer } from "./getData/pizzaReducer"
 import { addCartReducer } from "./addData/AddCartReducer"
 import { userRegisterReducer } from "./userRegister/registerReducer"
 import { userLoginReducer } from "./userRegister/registerReducer"
+import {orderReducer} from "./order/orderReducer"
 
 const rootReducer=combineReducers({
     getAllPizzas:getAllPizzasReducer,
     addToCart:addCartReducer,
     userRegisterReducer:userRegisterReducer,
-    userLoginReducer:userLoginReducer
+    userLoginReducer:userLoginReducer,
+    orderReducer:orderReducer
   
 })
 const cartItems=JSON.parse(localStorage.getItem("cartData")) || []

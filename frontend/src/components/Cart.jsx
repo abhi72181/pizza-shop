@@ -3,17 +3,19 @@ import { Button, Container } from "@chakra-ui/react";
 import "./Cart.css";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom"
 // import { deleteDataCart, getDataCart } from '../store/cart/Cart.action'
 import { useNavigate } from "react-router-dom";
 import { addPizzasToCart, deleteCart } from "../store/addData/AddToCartAction";
+// import Checkout from "./Checkout";
 
 const Cart = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   let getdatad = useSelector((state) => state.addToCart);
   // const {getdata,getloading,geterror}=getdatad
-  console.log(getdatad, "getdatad");
+  // console.log(getdatad, "getdatad");
   // const {getloading,geterror,getdata}=useSelector((state)=>state.getCartData.getCart)
   const plus = (e) => {
     dispatch(addPizzasToCart(e, e.varient, e.quantity + 1));
@@ -41,7 +43,7 @@ const Cart = () => {
         </div>
 
         {getdatad.cartItems.map((e) => (
-          <div className="downcartcontainer">
+          <div key={e.name} className="downcartcontainer">
             <div className="firstdowncartcontainer">
               <img
                 src={e.image}
@@ -126,7 +128,16 @@ const Cart = () => {
    <br />
    <div style={{color:"darkgreen",fontSize:"20px", fontWeight:"500"}}>Cart-Total:<span style={{color:"maroon", fontSize:"20px", fontWeight:"500"}}>{subTotalPrice}/-</span></div>
    <br />
-   <Button style={{marginBottom:"50px"}} colorScheme="orange" >CHECKOUT NOW</Button>
+   {/* <Button style={{marginBottom:"50px"}} colorScheme="orange" >
+    {getdatad.cartItems.length==0 ? }
+    <Link to="/checkout">CHECKOUT NOW</Link>
+    </Button> */}
+    <Link to="/checkout">
+    <Button disabled={getdatad.cartItems.length==0 ? true : false} style={{marginBottom:"50px"}} colorScheme="orange" >CHECKOUT NOW</Button> 
+    {/* <Button style={{marginBottom:"50px"}} colorScheme="orange" >CHECKOUT NOW</Button>  */}
+     </Link>
+   {/* <Checkout subTotal={subTotalPrice} /> */}
+   <br />
   </div>
       </div>
       <hr />
