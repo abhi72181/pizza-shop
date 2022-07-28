@@ -17,45 +17,40 @@ Pizza-Shop is a complete MERN website where a customer can order a variety of pi
 ## Snapshots 📷
 - Home page
 
-![signup](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/Screenshot%20(754).png?raw=true)
+![signup](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/Home1.png)
 <br />
-![signup](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/Screenshot%20(756).png?raw=true)
-<br />
-![signup](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/Screenshot%20(758).png?raw=true)
+![signup](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/Home2.png)
 <br />
 
 
 
-- product watches
 
 
-![linkAccount](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/watch.png?raw=true)
-<!-- https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/watch.png?raw=true -->
 
 
 - Signup page
 
-![indianWearmen1](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/signup.png?raw=true)
+![indianWearmen1](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/signup.png)
 
 - Login page
 
-![indianWearmen1](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/login.png?raw=true)
+![indianWearmen1](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/login.png)
 
 - cart page 
-![indianwearmen2](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/cartpage.png?raw=true)
+![indianwearmen2](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/cart.png)
 
 - checkout page
 
-![cart1](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/checkout.png?raw=true)
+![cart1](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/checkoutpizza.png)
 
 
 - Payment 
 
-![cart1](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/payment.png?raw=true)
+![cart1](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/otp.png)
 
 - Thankyou
 
-![cart1](https://github.com/abhi72181/meanbuy_clone/blob/main/public/images/thanks.png?raw=true)
+![cart1](https://github.com/abhi72181/pizza-shop/blob/master/frontend/public/images/thanks.png)
 <br/> <br/> 
 
 
